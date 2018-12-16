@@ -1,0 +1,161 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+*,
+:before,
+:after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  min-height: 100%;
+}
+
+body {
+  background-image:url("bg.png");
+  background-size:cover;
+  font-family: 'Righteous', cursive;
+  color: #fff;
+  background-color: #000;
+  letter-spacing: 5px;
+}
+
+
+
+.containercontainer{
+  position: absolute;
+  left: 50%;
+  margin-left: -350px;
+  top: 50%;
+  margin-top: -150px;
+}
+
+
+.wrapper {
+  position: relative;
+  height: 100%;
+}
+
+.title {
+  font-size: 2em;
+  position: relative;
+  margin: 0 auto 1em;
+  padding: 1em 1em .25em 1em;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.title:after {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  width: 240px;
+  height: 4px;
+  margin-left: -200px;
+  content: '';
+  background-color: #fff;
+}
+
+/* Clip text element */
+.clip-text {
+  font-size: 6em;
+  font-weight: bold;
+  line-height: 1;
+  position: relative;
+  display: inline-block;
+  margin: .25em;
+  padding: .5em .75em;
+  text-align: center;
+  /* Color fallback */
+  color: #fff;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.clip-text:before,
+.clip-text:after {
+  position: absolute;
+  content: '';
+}
+
+/* Background */
+.clip-text:before {
+  z-index: -2;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-image: inherit;
+  background-color: #fff;
+}
+
+.clip-text:after {
+  position: absolute;
+  z-index: -1;
+  top: .125em;
+  right: .125em;
+  bottom: .125em;
+  left: .125em;
+  background-color: #111111;
+}
+
+.clip-text--no-textzone:before {
+  background-position: -.65em 0;
+}
+
+.clip-text--no-textzone:after {
+  content: none;
+}
+.clip-text--cover,
+.clip-text--cover:before {
+  background-repeat: no-repeat;
+  -webkit-background-size: cover;
+  background-size: cover;
+  background-position: 50% 50%;
+}
+
+.clip-text_one {
+  background-image: url(https://j.gifs.com/xvPRk3.gif);
+    background-repeat: no-repeat;
+    background-position: -80px -15px; 
+
+}
+
+.shine{
+  position: absolute;
+  height: 170px;
+  width: 600px;
+   top: 36px;
+  left: 36px;
+  clip-path: polygon(0 0, 600px 0, 600px 170px, 0% 170px);
+  opacity:.9;
+
+}
+
+.shinemove{
+  animation-name: shinemove;
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
+  animation-direction: normal;
+  animation-timing-function: cubic-bezier(.3,0,.63,.14);
+  opacity: .1;
+}
+
+@keyframes shinemove{
+
+  0%{
+   transform: translateX(-250px);
+  }
+
+  20%{
+       transform: translateX(600px);
+}
+  100%{
+       transform: translateX(600px);
+  }
+}
